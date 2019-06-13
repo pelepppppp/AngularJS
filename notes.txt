@@ -1,0 +1,9 @@
+$http Service
+- Service is a reuable business logic independent of
+
+myApp.controller("myController", function($scope, $http){
+	$http.get("http://localhost:42016/api/products/777")
+	.then(function(response){
+		$scope.product = response.data;
+	});
+});

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS Fundamentals</title>
+	<script src="angular.js"></script>
+	<script src="angular-route.js"></script>
+</head>
+<body ng-app ng-init="username='Jessica Oxley'">
+	<!-- {{username}} -->
+	<p ng-bind="username"></p>
+	<form name="myForm">
+		<input type="search" placeholder="Thomas Anderson" ng-model="username">
+		<input type="submit" value="Search">
+	</form>
+</body>
+</html>	
