@@ -18,26 +18,18 @@
            width: 30%;
            float: right;
        }
-
-       /* .thWidth {
-           width: 33%;
-       } */
    </style>
    <body class="container" ng-app="myApplication" ng-controller="myController">
-        <!-- <div ng-include="'include.html'"></div><br><br> -->
-        <!-- <input class="btn btn-info btn-sm" type="button" value="Show Product" ng-click="showThisProduct()"> -->
-        <!-- <input class="btn btn-warning btn-sm" type="button" value="Hide Product" ng-click="hideThisProduct()"> -->
-        <!-- <input class="form-control form-control-sm" placeholder="Search" ng-model="searchText"><br><br> -->
         <table class="table table-bordered table-hover">
             <thead class="thead-dark">
-                <!-- <th class="thWidth">Post ID</th> -->
-                <th class="thWidth">ID</th>
-                <th class="thWidth">Name</th>
-                <th class="thWidth">Email</th>
-                <th class="thWidth">Body</th>
+                <!-- <th >Post ID</th> -->
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Body</th>
             </thead>
             <tbody>
-                <tr ng-repeat="comment in comments">
+                <tr ng-repeat="comment in comments | limitTo : 10">
                     <!-- <td>{{comment.postId}}</td> -->
                     <td>{{comment.id}}</td>
                     <td>{{comment.name}}</td>
@@ -46,21 +38,30 @@
                 </tr>
             </tbody>
         </table>
-        <table>
-
-        </table>
         <script>
             var application = angular.module("myApplication", []);
-            application.controller("myController", function($scope, $http){                
-                $http.get("https://jsonplaceholder.typicode.com/posts/1/comments")
-                .then(function(response){
-                    $scope.comments = response.data;
-                }, function(){
-                    $scope.error = "Unable to get the comment information."
-                });                
-            });
-            
+            application.controller("myController", function($scope, $http){    
+                
+                // EXPLICIT
+                var onCommentComplete = function(res){
+                    $scope.comments = res.data;
+                    console.log(res.data)
+                }
 
+                var onError = function(err){
+                    $scope.error = "Unable to get the comment information " + err; 
+                }
+                
+                $http.get("https://jsonplaceholder.typicode.com/posts/1/comments")
+                .then(onCommentComplete, onError);
+
+                // .then(function(res){
+                //     $scope.comments = res.data;
+                // }, function(){
+                //     $scope.error = "Unable to get the comment information."
+                // });    
+
+            });
         </script>
    </body>
 </html>

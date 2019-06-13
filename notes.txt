@@ -1,4 +1,5 @@
-$http Service
+**$http Service
+
 - Service is a reuable business logic independent of
 
 myApp.controller("myController", function($scope, $http){
@@ -7,3 +8,70 @@ myApp.controller("myController", function($scope, $http){
 		$scope.product = response.data;
 	});
 });
+
+
+**ROUTING
+
+- helps in dividing an application in logical views  and binds different views to controllers.
+/myapplication/#home >> HOME >> HomeController
+/myapplication/#aboutus >> About Us >> AboutUsController
+/myapplication/#faq >> FAQ >> FaqController
+
+• $routeProvider is a service provider that takes care of application route.
+• it makes easy to wire together controllers, view templates and the current URL location in the browser.
+• $routeProvider
+	DEPENDENCIES				DESCRIPTION
+	ngRoute						This moodule provides routing and deep linking
+								services and directives for angular applications.
+• reference the angular-route.js file
+• add ngRoute as a module dependency
+• add an ng-view directives
+
+	1 <head>
+		//scripts here
+		<script></scripts>
+	  </head>
+
+	2 //declare a module
+	var myApp = angular,module("mainApp", ["ngRoute"]);
+
+	3 <body>
+		<div ng-view></div>
+	  </body>
+
+• use the angular applcation .config() method to define $routeProvider configutration.
+
+	angular,module("mainApp", ["ngRoute"]);
+		.config(function($routeProvider){
+			...	
+		})
+
+• $routeProvider provied method .when() and .otherwise which can be use to define the routing.
+
+	angular,module("mainApp", ["ngRoute"]);
+		.config(function($routeProvider){
+			$$routeProvider
+				.when( ...)
+				.otherwise( ...)
+		})
+
+• then .when method adds a new route definition.
+• its route parameter contains the mapping information.
+
+	$routeProvider.when(path, route)
+
+	ROUTE OBJECT PROPERTIES						DESCRIPTION
+	templates									HTML template which should be used by ng-view.
+	teplateUrl									Path that returns an HTML template that should be used by ngView.
+	controller									The name of a registered controller.
+	controllerAs								An identifier name for a referrence controller.
+	redirectTo									Value to update $location path and trigger route redirection.
+	caseInsensitiveMAtch						Matches routes without being case sensitive.
+
+• the role of the ng-view directive is to include the view template for the current route into the layout template.
+	<div ng-view></div>
+	<ng-view></ng-view>
+	<div class="ng-view"></div?
+
+
+	
