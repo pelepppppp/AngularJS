@@ -1,5 +1,3 @@
-
-
 .logo {
 	width: 15%;
 	margin-top: 0.70%;
@@ -75,12 +73,6 @@ th {
 
 .button {
 	width: 10%;
-	/* margin-left: 8.5%; */
-	/* margin-top: 2%; */
-	/* margin: -20px -50px;
-	position: relative;
-    top: 50%; 
-    left: 50%; */
 }
 
 .header-container {
@@ -95,18 +87,29 @@ th {
 
 .name {
 	width: 20%;
+	text-align: center;
 }
 
 .address {
 	width: 30%;
+	text-align: center;
 }
 
 .age {
 	width: 10%;
+	text-align: center;
 }
 
 .options {
 	width: 20%;
+	text-align: center;
+}
+
+#name, #address {
+	padding-left: 5%;
+}
+
+#age {
 	text-align: center;
 }
 
@@ -122,26 +125,36 @@ th {
 	font-size: 0.90vw;
 }
 
-.enroll {
-	width: 12%;
-}
-
-.update {
-	width: 12%;
-	float: right;
-}
 
 .filter {
 	width: 20%;
-	margin-bottom: 1%;
+	margin-top: 2%;
 	float: right
 }
 
-footer {
-	position: fixed;
-	background: tomato;
-	left: 0;
-	bottom: 0;
-	right: 0;
+.content {
+	flex: 1 0 auto;
+}
+
+html { 
+	height: 100%;
+}
+
+body {
+    min-height: 96%; 
+    position: relative; 
+	padding-bottom: 4%;
+}
+
+.footer { 
+    position: absolute; 
+	left: 0; 
+	right: 0; 
+	bottom: 3%; 
+	height:[footer-height];
+	text-align: center;
+	margin-bottom: -1%;
+	padding-top: 1%;
+	padding-bottom: -5%;
 }
 

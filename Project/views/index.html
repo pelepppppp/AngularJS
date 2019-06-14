@@ -1,51 +1,49 @@
 <div class="container form-container">
-    <form>
-        <div class="form-group row">
-            <!-- <label class="col-sm-1 col-form-label">Name</label> -->
-            <div class="col-sm-12">
-                <input type="text" class="form-control" ng-model="name" placeholder="Name">
-            </div>
-        </div>
-        <div class="form-group row">
-            <!-- <label class="col-sm-1 col-form-label">Address</label> -->
-            <div class="col-sm-12">
-                <input type="text" class="form-control" ng-model="address" placeholder="Address">
-            </div>
-        </div>
-        <div class="form-group row">
-            <!-- <label class="col-sm-1 col-form-label">Age</label> -->
-            <div class="col-sm-12">
-                <input type="text" class="form-control" ng-model="age" placeholder="Age">
-            </div>
-        </div>
-    </form>
-    <input class="btn btn-info btn-sm button enroll" type="button" value="Submit" ng-click="enroll()">
-    <input class="btn btn-success btn-sm button update" type="button" value="Update" ng-click="updatePerson()">
-</div>
-
-<div class="container table-container">
-    <input type="search" class="form-control form-control-sm filter" placeholder="Filter" ng-model="filter">
-    <table class="table table-borderless">
-        <thead class="thead-dark">
-            <th class="name">Name</th>
-            <th class="address">Address</th>
-            <th class="age">Age</th>
-            <th class="options">Options</th>
-        </thead>
-        <tbody>
-            <tr ng-repeat="person in people | filter: filter">
-                <td id="name">{{person.Name}}</td>
-                <td id="address">{{person.Address}}</td>
-                <td id="age">{{person.Age}}</td>
-                <td>
-                    <button class="btn btn-outline-primary btn-sm" ng-click="update()">Update</button>
-                    <button class="btn btn-outline-danger btn-sm" ng-click="remove()">Remove</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- <footer class="container footer">
-    <p>All Rights Reserved 2019</p>
-</footer> -->
+        <form>
+           <div class="form-group row">
+              <!-- <label class="col-sm-1 col-form-label">Name</label> -->
+              <div class="col-sm-12">
+                 <input type="text" class="form-control" ng-model="name" placeholder="Name">
+              </div>
+           </div>
+           <div class="form-group row">
+              <!-- <label class="col-sm-1 col-form-label">Address</label> -->
+              <div class="col-sm-12">
+                 <input type="text" class="form-control" ng-model="address" placeholder="Address">
+              </div>
+           </div>
+           <div class="form-group row">
+              <!-- <label class="col-sm-1 col-form-label">Age</label> -->
+              <div class="col-sm-12">
+                 <input type="text" class="form-control" ng-model="age" placeholder="Age">
+              </div>
+           </div>
+        </form>
+        <input class="btn btn-info btn-sm button" type="button" value="Submit" ng-click="enroll()">
+        <input class="btn btn-success btn-sm button" type="button" value="Update" ng-click="updatePerson()">
+        <input type="search" class="form-control form-control-sm filter" placeholder="Filter" ng-model="filter">
+     </div>
+     <div class="container table-container content">
+        <table class="table table-bordered">
+           <thead class="thead-dark">
+              <th class="name">Name</th>
+              <th class="address">Address</th>
+              <th class="age">Age</th>
+              <th class="options">Options</th>
+           </thead>
+           <tbody>
+              <tr ng-repeat="person in people | filter: filter">
+                 <td id="name">{{person.Name}}</td>
+                 <td id="address">{{person.Address}}</td>
+                 <td id="age">{{person.Age}}</td>
+                 <td>
+                    <button class="btn btn-outline-primary btn-sm" ng-click="update($index, person.Name, person.Address, person.Age)">Update</button>
+                    <button class="btn btn-outline-danger btn-sm" ng-click="remove($index)">Remove</button>
+                 </td>
+              </tr>
+           </tbody>
+        </table>
+     </div>
+     <footer class="container footer">
+        <p>All Rights Reserved 2019</p>
+     </footer>
