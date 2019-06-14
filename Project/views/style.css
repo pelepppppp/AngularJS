@@ -1,0 +1,147 @@
+
+
+.logo {
+	width: 15%;
+	margin-top: 0.70%;
+}
+
+.nav-ul {
+	text-decoration: none;
+	list-style: none;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+.nav-item::after {
+	content: '';
+	display: block;
+	width: 0px;
+	height: 2px;
+	background: #E31B6D;
+	transition: 0.2s;
+	margin-top: -10px;
+}
+
+.nav-item:hover::after {
+	width: 100%;
+}
+
+.nav-link {
+	padding: 15px 5px;
+	transition: 0.2s;
+}
+
+.navbar-nav .nav-link {
+	color: #000;
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
+.navbar-nav .active > .nav-link {
+	  color: #E31B6D;
+}
+.navbar {
+	float: right;
+}
+#logo {
+	margin-top: 1.5%;
+	background: transparent;
+}
+#container {
+	margin-top: 3%;
+}
+.head {
+	color: #fff;
+}
+th {
+	background-color: #212529;
+	color: #fff;
+}
+
+.hr {
+	margin-top: 0.5%;
+}
+
+.form-container {
+	width: 100%;
+}
+
+.input-field {
+	float: right;
+}
+
+.button {
+	width: 10%;
+	/* margin-left: 8.5%; */
+	/* margin-top: 2%; */
+	/* margin: -20px -50px;
+	position: relative;
+    top: 50%; 
+    left: 50%; */
+}
+
+.header-container {
+	margin-top: 2%;
+}
+
+/* TABLE */
+
+.table-container {
+	margin-top: 2%;
+}
+
+.name {
+	width: 20%;
+}
+
+.address {
+	width: 30%;
+}
+
+.age {
+	width: 10%;
+}
+
+.options {
+	width: 20%;
+	text-align: center;
+}
+
+.btn-outline-primary {
+	margin-left: 19%;
+	width: 30%;
+	font-size: 0.90vw;
+}
+
+.btn-outline-danger {
+	margin-left: 1%;
+	width: 30%;
+	font-size: 0.90vw;
+}
+
+.enroll {
+	width: 12%;
+}
+
+.update {
+	width: 12%;
+	float: right;
+}
+
+.filter {
+	width: 20%;
+	margin-bottom: 1%;
+	float: right
+}
+
+footer {
+	position: fixed;
+	background: tomato;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
